@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sept14_2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,11 @@ namespace sept14_2.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            return View();
+            var genres = new List<Genre>();
+            for(int i = 1; i <= 10; i++) {
+                genres.Add(new Genre { Name = "Genre " + i.ToString() });
+            }
+            return View(genres);
         }
 
         // GET: Store/Browse
